@@ -17,16 +17,16 @@ pipeline {
         stage('maven build') {
             steps {
                 echo '> Building the maven application ...'
-                sh 'cd Java-Calculator && cd calculator  && mvn clean install'
+                sh 'cd calc_spe && mvn clean install'
             }  
             post {
                 success{
-                    sh 'cd Java-Calculator && cd calculator  && mvn site'
+                    sh 'cd calc_spe  && mvn site'
                     echo "build successful"
                       publishHTML target: [
                             allowMissing: false,
                             alwaysLinkToLastBuild: false,
-                            reportDir: 'Java-Calculator/calculator/target/site',
+                            reportDir: 'calc_spe/target/site',
                             reportFiles: 'surefire-report.html',
                             reportName: 'JUnit Test Report'
                         ]
