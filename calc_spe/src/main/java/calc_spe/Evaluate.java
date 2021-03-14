@@ -31,8 +31,6 @@ public class Evaluate {
                 }
 
 				else if(text.charAt(i) == '^' ) {
-					System.out.println("string 1" + text.substring(0, i));
-					System.out.println("string 2" + text.substring(i+1));
 					return Math.pow(Double.parseDouble(text.substring(0, i)), Double.parseDouble(text.substring(i+1)));
 				}
 				

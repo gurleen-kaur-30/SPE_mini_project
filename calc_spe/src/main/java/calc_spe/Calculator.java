@@ -217,7 +217,6 @@ public class Calculator {
 		btnEq.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnEq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(textField_1.getText());
 	            double result = Evaluate.evaluate(textField_1.getText());
 	            String output = Double.toString(result);
 	            textField_1.setText(output);

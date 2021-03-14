@@ -20,7 +20,6 @@ class EvaluateTest {
 	@Test
 	void evaluate_3() {
 		double result = Evaluate.evaluate("22^2");
-		System.out.println(result);
 		assertEquals(result,484);
 	}
 	
