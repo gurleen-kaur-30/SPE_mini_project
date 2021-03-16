@@ -33,5 +33,12 @@ pipeline {
                 }
             }
         }
+        stage('Docker build'){
+            steps{
+                script{
+                    docker.build "gurleen-kaur-30/spe_mini:latest"
+                }
+            }
+        }
     }
 }
