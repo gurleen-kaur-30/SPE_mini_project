@@ -50,5 +50,9 @@ pipeline {
                 }
             }
         }
+
+        stage('Ansible pull docker image'){
+            ansiblePlaybook becomeUser: null, colorized: true, installation: 'Ansible', disableHostKeyChecking: true, inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/deploy-image.yml', sudoUser: null
+        }
     }
 }
