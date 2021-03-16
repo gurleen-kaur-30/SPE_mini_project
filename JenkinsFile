@@ -44,8 +44,9 @@ pipeline {
          stage('Push image to docker hub'){
             steps{
                 script{
-                    docker.withRegistry('', 'docker-jenkins')
-                    dockerImage.push()
+                    docker.withRegistry('', 'docker-jenkins'){
+                        dockerImage.push()
+                    }
                 }
             }
         }
