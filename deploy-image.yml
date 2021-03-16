@@ -1,7 +1,0 @@
-- name: Pull docker image of spe mini project
-  hosts: all
-  tasks:
-    - name: Pull spe mini image
-      docker_image:
-        name: gurleenk/spe_mini
-        source: pull
