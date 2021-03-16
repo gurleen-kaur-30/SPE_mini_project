@@ -37,7 +37,7 @@ pipeline {
         stage('Docker build'){
             steps{
                 script{
-                    dockerImage = docker.build "gurleen-kaur-30/spe_mini:latest"
+                    dockerImage = docker.build "gurleenk/spe_mini:latest"
                 }
             }
         }
