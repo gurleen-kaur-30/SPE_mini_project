@@ -1,4 +1,7 @@
 pipeline {
+    environment{
+        dockerImage = ""
+    }
     agent any
     tools {
         maven 'maven'
@@ -36,7 +39,15 @@ pipeline {
         stage('Docker build'){
             steps{
                 script{
-                    docker.build "gurleen-kaur-30/spe_mini:latest"
+                    dockerImage = docker.build "gurleen-kaur-30/spe_mini:latest"
+                }
+            }
+        }
+         stage('Push image to docker hub'){
+            steps{
+                script{
+                    docker.withRegistry('', 'docker-jenkins')
+                    dockerImage.push()
                 }
             }
         }
