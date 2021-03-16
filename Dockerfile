@@ -1,4 +1,7 @@
 FROM openjdk:8
-COPY ./calc_spe/target/calc_spe-0.0.1-SNAPSHOT.jar./
-WORKDIR ./
+#copy the jar file from target to current directory
+COPY ./calc_spe/target/calc_spe-0.0.1-SNAPSHOT.jar ./ 
+#make current directory my working directory
+WORKDIR ./            
+#run the command to run the calc app
 CMD ["java","-jar", "target/calc_spe-0.0.1-SNAPSHOT.jar"]
