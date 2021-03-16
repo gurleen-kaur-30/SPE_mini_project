@@ -1,13 +1,14 @@
 pipeline {
-    environment{
-        dockerImage = ""
-    }
+    
     agent any
     tools {
         maven 'maven'
     }
     options {
         skipDefaultCheckout(true)
+    }
+    environment{
+        dockerImage = ""
     }
  
     stages {
