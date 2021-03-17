@@ -1,5 +1,7 @@
 - name: Pull docker image of spe mini project
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python2.7
   tasks:
     - name: Pull spe mini image
       docker_image:
