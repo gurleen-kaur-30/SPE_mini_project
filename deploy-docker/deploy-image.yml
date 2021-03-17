@@ -1,5 +1,5 @@
 - name: Pull docker image of spe mini project
-  hosts: all
+  hosts: local
   tasks:
     - name: Pull spe mini image
       docker_image:
